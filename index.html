@@ -1,0 +1,614 @@
+<!--
+  Built by LevelUpAI (levelupaico.com) for American Painting.
+  Build ID: LVLUP-dc13497abf9d
+  Built: 2026-10-28T17:23:11.306Z
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="generator" content="LevelUpAI Site Builder">
+<meta name="levelupai-build-id" content="LVLUP-dc13497abf9d">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>American Painting</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;500;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1B3A6B;
+    --navy-dark:#132a4f;
+    --red:#D6301F;
+    --red-dark:#a92418;
+    --cream:#FFF8EE;
+    --mustard:#F2A900;
+    --ink:#1A1A1A;
+  }
+
+  /* ---------- LEVELUPAI BRANDING BAR ---------- */
+  .lvlup-brand-bar{display:none;}
+  body[data-lvlup-branding="true"] .lvlup-brand-bar{
+    display:flex;align-items:center;justify-content:space-between;
+    background:#0d0d0d;color:#fff;padding:12px 5%;font-family:'Oswald',sans-serif;
+    flex-wrap:wrap;gap:10px;
+  }
+  .lvlup-brand-left{display:flex;align-items:center;gap:10px;font-size:0.85rem;}
+  .lvlup-brand-dot{width:8px;height:8px;border-radius:50%;background:var(--red);flex-shrink:0;}
+  .lvlup-brand-sub{color:rgba(255,255,255,0.55);margin-left:6px;font-weight:400;}
+  .lvlup-brand-cta{
+    background:var(--red);color:#fff;padding:9px 20px;border-radius:100px;
+    font-weight:700;font-size:0.8rem;letter-spacing:0.5px;text-decoration:none;
+    white-space:nowrap;transition:opacity .2s ease;
+  }
+  .lvlup-brand-cta:hover{opacity:0.85;}
+  @media (max-width:600px){
+    .lvlup-brand-bar{padding:10px 4%;}
+    .lvlup-brand-sub{display:none;}
+  }
+
+  /* ---------- STYLE SWITCHER WIDGET ---------- */
+  .style-switcher{
+    position:fixed;bottom:24px;right:24px;z-index:100;
+    font-family:'Oswald',sans-serif;
+  }
+  .style-switcher .toggle-btn{
+    width:52px;height:52px;border-radius:50%;
+    background:var(--navy);border:3px solid var(--cream);
+    box-shadow:0 6px 18px rgba(0,0,0,0.3);
+    cursor:pointer;display:flex;align-items:center;justify-content:center;
+    font-size:1.3rem;transition:transform .2s ease;
+  }
+  .style-switcher .toggle-btn:hover{transform:scale(1.08);}
+  .style-switcher .panel{
+    position:absolute;bottom:64px;right:0;
+    background:var(--cream);border:2px solid var(--ink);
+    padding:14px;width:190px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.25);
+    display:none;flex-direction:column;gap:8px;
+  }
+  .style-switcher .panel.open{display:flex;}
+  .style-switcher .panel-label{
+    font-size:0.68rem;letter-spacing:1.5px;text-transform:uppercase;
+    color:var(--navy);font-weight:600;margin-bottom:2px;
+  }
+  .style-switcher .swatch-btn{
+    display:flex;align-items:center;gap:10px;
+    background:transparent;border:1.5px solid rgba(0,0,0,0.12);
+    padding:8px 10px;cursor:pointer;text-align:left;
+    font-family:'Oswald',sans-serif;font-size:0.8rem;font-weight:500;color:var(--ink);
+    transition:border-color .2s ease, background .2s ease;
+  }
+  .style-switcher .swatch-btn:hover{border-color:var(--navy);background:rgba(0,0,0,0.03);}
+  .style-switcher .swatch-btn.active{border-color:var(--red);border-width:2px;font-weight:700;}
+  .style-switcher .dots{display:flex;flex-shrink:0;}
+  .style-switcher .dots span{width:14px;height:14px;border-radius:50%;margin-left:-4px;border:1.5px solid #fff;}
+  .style-switcher .dots span:first-child{margin-left:0;}
+  @media (max-width:640px){
+    .style-switcher{bottom:16px;right:16px;}
+    .style-switcher .toggle-btn{width:46px;height:46px;font-size:1.1rem;}
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Oswald',sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+    overflow-x:hidden;
+  }
+  h1,h2,h3{font-family:'Anton',sans-serif;letter-spacing:0.5px;text-transform:uppercase;}
+  .script{font-family:'Caveat',cursive;}
+  a{text-decoration:none;color:inherit;}
+  img{display:block;max-width:100%;}
+
+  /* ---------- NAV ---------- */
+  .navbar{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:18px 5%;
+    background:var(--cream);
+    border-bottom:3px solid var(--ink);
+    position:relative;z-index:20;
+  }
+  .navbar .logo-mark{
+    font-family:'Anton',sans-serif;
+    font-size:1.5rem;
+    color:var(--navy);
+    display:flex;align-items:center;gap:10px;
+  }
+  .navbar .logo-mark .dot{
+    width:12px;height:12px;background:var(--red);border-radius:50%;
+  }
+  .nav-links{display:flex;gap:28px;align-items:center;}
+  .nav-links a{
+    font-size:0.85rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;
+    color:var(--ink);padding-bottom:4px;border-bottom:2px solid transparent;
+    transition:border-color .2s, color .2s;
+  }
+  .nav-links a:hover{color:var(--red);border-color:var(--red);}
+  .nav-links a.current{color:var(--red);border-color:var(--red);}
+  .nav-cta{
+    background:var(--red);color:#fff !important;padding:10px 22px;
+    font-size:0.8rem;font-weight:700;letter-spacing:1.5px;border:2px solid var(--red);
+    transition:background .2s,color .2s;
+  }
+  .nav-cta:hover{background:transparent;color:var(--red) !important;}
+  .nav-toggle{display:none;background:none;border:none;font-size:1.6rem;cursor:pointer;color:var(--navy);}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    min-height:88vh;
+    display:flex;align-items:center;justify-content:center;
+    background-size:cover;background-position:center;
+    background-image:linear-gradient(180deg, rgba(15,25,45,0.35), rgba(15,25,45,0.55)), url('https://images.unsplash.com/photo-1635355643629-ac06bec6a914?ixid=M3wxMDM1NzM1fDB8MXxzZWFyY2h8MXx8cGFpbnRpbmclMjBjb21wYW5pZXMlMjB3b3JrZXIlMjBwcm9mZXNzaW9uYWwlMjBzZXJ2aWNlfGVufDB8Mnx8fDE3OTMyMDgxOTF8MA&ixlib=rb-4.1.0&w=1200&q=80&fit=crop');
+  }
+  .hero-card{
+    background:rgba(255,248,238,0.96);
+    border:1px solid rgba(0,0,0,0.08);
+    padding:44px 48px;
+    max-width:760px;
+    width:90%;
+    text-align:center;
+    box-shadow:0 20px 50px rgba(0,0,0,0.25);
+  }
+  .hero-eyebrow{
+    font-size:0.75rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;
+    color:var(--red);margin-bottom:14px;
+  }
+  .hero-card .biz-name{
+    font-family:'Caveat',cursive;font-weight:700;
+    font-size:4rem;line-height:1;color:var(--red);
+    display:inline-block;position:relative;
+  }
+  .hero-ribbon{
+    display:inline-block;background:var(--navy);color:#fff;
+    font-family:'Anton',sans-serif;font-size:1.4rem;letter-spacing:6px;
+    padding:8px 26px;margin:16px 0 20px;
+    clip-path:polygon(0 0,100% 0,96% 50%,100% 100%,0 100%,4% 50%);
+  }
+  .hero-sub{
+    font-size:1rem;color:#444;max-width:520px;margin:0 auto 22px;line-height:1.6;
+  }
+  .hero-meta{
+    display:flex;justify-content:center;gap:32px;flex-wrap:wrap;
+    font-size:0.85rem;font-weight:500;color:var(--navy-dark);
+    border-top:1px solid rgba(0,0,0,0.12);padding-top:18px;
+  }
+  .hero-meta strong{display:block;font-size:0.7rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--red);margin-bottom:4px;}
+
+  /* Zigzag divider — signature element */
+  .zigzag{
+    height:26px;width:100%;
+    background:var(--cream);
+    clip-path:polygon(
+      0% 100%,0% 0%,3% 100%,6% 0%,9% 100%,12% 0%,15% 100%,18% 0%,21% 100%,24% 0%,
+      27% 100%,30% 0%,33% 100%,36% 0%,39% 100%,42% 0%,45% 100%,48% 0%,51% 100%,54% 0%,
+      57% 100%,60% 0%,63% 100%,66% 0%,69% 100%,72% 0%,75% 100%,78% 0%,81% 100%,84% 0%,
+      87% 100%,90% 0%,93% 100%,96% 0%,99% 100%,100% 0%,100% 100%
+    );
+    position:relative;margin-top:-2px;z-index:5;
+  }
+  .zigzag.flip{transform:rotate(180deg);margin:0;}
+
+  /* ---------- TRUST BAND ---------- */
+  .trust-band{background:var(--navy);color:#fff;padding:56px 5% 64px;text-align:center;}
+  .trust-band h2{font-size:1.8rem;margin-bottom:40px;letter-spacing:2px;}
+  .badges{display:flex;justify-content:center;gap:48px;flex-wrap:wrap;}
+  .badge{
+    width:150px;height:150px;border-radius:50%;
+    border:4px dashed var(--mustard);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    padding:14px;position:relative;
+    transition:transform .25s ease;
+  }
+  .badge:hover{transform:rotate(6deg) scale(1.05);}
+  .badge .big{font-family:'Anton',sans-serif;font-size:1.6rem;color:var(--mustard);line-height:1;}
+  .badge .small{font-size:0.65rem;letter-spacing:1.5px;text-transform:uppercase;margin-top:6px;color:#fff;}
+
+  /* ---------- FEATURE SPLIT ---------- */
+  .feature{
+    display:grid;grid-template-columns:1fr 1fr;min-height:520px;
+  }
+  .feature-text{
+    display:flex;flex-direction:column;justify-content:center;
+    padding:60px 8%;
+  }
+  .feature-text .tag{color:var(--red);font-size:0.8rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;}
+  .feature-text h2{font-size:2.4rem;color:var(--navy);line-height:1.15;margin-bottom:18px;}
+  .feature-text p{font-size:1rem;line-height:1.7;color:#3a3a3a;margin-bottom:26px;max-width:440px;}
+  .btn-outline{
+    display:inline-block;border:2px solid var(--red);color:var(--red);
+    padding:12px 30px;font-size:0.85rem;font-weight:700;letter-spacing:2px;
+    width:fit-content;transition:background .2s,color .2s;
+  }
+  .btn-outline:hover{background:var(--red);color:#fff;}
+  .feature-photo{
+    background-size:cover;background-position:center;
+    background-image:url('https://images.unsplash.com/photo-1786295866809-cdc32da99301?ixid=M3wxMDM1NzM1fDB8MXxzZWFyY2h8Mnx8cGFpbnRpbmclMjBjb21wYW5pZXMlMjB3b3JrZXIlMjBwcm9mZXNzaW9uYWwlMjBzZXJ2aWNlfGVufDB8Mnx8fDE3OTMyMDgxOTF8MA&ixlib=rb-4.1.0&w=1200&q=80&fit=crop');
+    min-height:340px;position:relative;
+  }
+  .feature-photo::after{
+    content:'';position:absolute;inset:0;
+    background:linear-gradient(135deg, rgba(214,48,31,0.12), rgba(27,58,107,0.12));
+  }
+
+  /* ---------- MENU BOARD ---------- */
+  .menu-board{background:var(--cream);padding:70px 6% 80px;text-align:center;}
+  .menu-board .tag{color:var(--red);}
+  .menu-board h2{color:var(--navy);font-size:2.2rem;margin:8px 0 44px;}
+  .menu-list{max-width:760px;margin:0 auto;text-align:left;}
+  .menu-item{
+    display:flex;justify-content:space-between;align-items:baseline;gap:20px;
+    padding:18px 0;border-bottom:2px dotted rgba(27,58,107,0.35);
+    transition:padding-left .2s ease;
+  }
+  .menu-item:hover{padding-left:10px;}
+  .menu-item .name{font-family:'Anton',sans-serif;font-size:1.3rem;color:var(--navy);letter-spacing:0.5px;}
+  .menu-item .desc{font-size:0.85rem;color:#555;margin-top:4px;font-family:'Oswald',sans-serif;}
+  .menu-item .mark{font-family:'Anton',sans-serif;color:var(--red);font-size:1.1rem;white-space:nowrap;}
+
+  /* ---------- PROCESS / STEPS ---------- */
+  .process{background:var(--navy);padding:70px 6% 80px;text-align:center;color:#fff;}
+  .process h2{font-size:2.2rem;margin-bottom:50px;letter-spacing:2px;}
+  .steps{display:flex;justify-content:center;gap:40px;flex-wrap:wrap;max-width:1000px;margin:0 auto;}
+  .step{max-width:220px;}
+  .step .num{
+    width:76px;height:76px;margin:0 auto 18px;border-radius:50%;
+    border:3px dashed var(--mustard);color:var(--mustard);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Anton',sans-serif;font-size:1.6rem;
+    transition:transform .25s ease;
+  }
+  .step:hover .num{transform:scale(1.08) rotate(-4deg);}
+  .step h3{font-size:1.1rem;letter-spacing:1px;margin-bottom:8px;}
+  .step p{font-family:'Oswald',sans-serif;font-size:0.85rem;color:rgba(255,255,255,0.75);line-height:1.5;}
+
+  /* ---------- QUOTE / CITY BAND ---------- */
+  .quote-band{
+    position:relative;min-height:420px;
+    background-size:cover;background-position:center;
+    background-image:linear-gradient(180deg, rgba(10,15,30,0.55), rgba(10,15,30,0.65)), url('https://images.unsplash.com/photo-1772384404280-57f4563dc105?ixid=M3wxMDM1NzM1fDB8MXxzZWFyY2h8M3x8cGFpbnRpbmclMjBjb21wYW5pZXMlMjB3b3JrZXIlMjBwcm9mZXNzaW9uYWwlMjBzZXJ2aWNlfGVufDB8Mnx8fDE3OTMyMDgxOTF8MA&ixlib=rb-4.1.0&w=1200&q=80&fit=crop');
+    display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;padding:40px 6%;
+  }
+  .quote-band .script{font-size:2.6rem;line-height:1.3;max-width:780px;}
+  .quote-band .attribution{margin-top:18px;font-size:1rem;letter-spacing:2px;text-transform:uppercase;color:var(--mustard);font-weight:600;}
+
+  /* ---------- GALLERY ---------- */
+  .gallery-band{background:var(--navy);padding:18px 0;text-align:center;}
+  .gallery-band h2{color:#fff;font-size:1.6rem;letter-spacing:3px;}
+  .gallery-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);
+  }
+  .gallery-grid img{
+    width:100%;height:280px;object-fit:cover;
+    filter:saturate(1.05);
+    transition:transform .35s ease, filter .35s ease;
+  }
+  .gallery-grid a{overflow:hidden;display:block;}
+  .gallery-grid a:hover img{transform:scale(1.08);filter:saturate(1.2) brightness(1.03);}
+
+  /* ---------- CONTACT ---------- */
+  .contact-band{background:var(--red);color:#fff;padding:64px 5%;}
+  .contact-inner{max-width:1100px;margin:0 auto;text-align:center;}
+  .contact-band h2{font-size:2rem;margin-bottom:8px;letter-spacing:2px;}
+  .contact-band .sub{font-size:0.95rem;margin-bottom:34px;color:rgba(255,255,255,0.9);}
+  .contact-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:28px;
+    background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.25);
+    padding:30px;text-align:left;
+  }
+  .contact-grid .label{font-size:0.7rem;letter-spacing:2px;text-transform:uppercase;color:var(--mustard);margin-bottom:6px;font-weight:700;}
+  .contact-grid .value{font-size:1.05rem;font-weight:500;}
+
+  /* ---------- PAGE HEADER (About / Services) ---------- */
+  .page-header{background:var(--navy);color:#fff;padding:70px 5% 50px;text-align:center;}
+  .page-header .tag{color:var(--mustard);font-size:0.8rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;}
+  .page-header h1{font-size:2.6rem;letter-spacing:1px;}
+
+  /* ---------- FOOTER LINKS ---------- */
+  footer{background:var(--navy-dark);color:rgba(255,255,255,0.75);padding:40px 5% 24px;text-align:center;font-size:0.8rem;}
+  .footer-links{display:flex;justify-content:center;gap:24px;margin-bottom:18px;flex-wrap:wrap;}
+  .footer-links a{font-size:0.8rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.75);transition:color .2s;}
+  .footer-links a:hover{color:var(--mustard);}
+  footer .credit{margin-top:6px;font-size:0.7rem;color:rgba(255,255,255,0.5);}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width:900px){
+    .feature{grid-template-columns:1fr;}
+    .feature-photo{min-height:280px;order:-1;}
+    .gallery-grid{grid-template-columns:repeat(2,1fr);}
+    .contact-grid{grid-template-columns:1fr;}
+  }
+  @media (max-width:640px){
+    .nav-links{
+      position:absolute;top:100%;left:0;right:0;
+      background:var(--cream);flex-direction:column;gap:0;
+      border-bottom:3px solid var(--ink);
+      max-height:0;overflow:hidden;transition:max-height .3s ease;
+    }
+    .nav-links.open{max-height:400px;}
+    .nav-links a{padding:16px 5%;width:100%;border-bottom:1px solid rgba(0,0,0,0.08);}
+    .nav-toggle{display:block;}
+    .hero-card{padding:30px 22px;}
+    .hero-card .biz-name{font-size:2.8rem;}
+    .hero-ribbon{font-size:1rem;letter-spacing:3px;padding:6px 16px;}
+    .hero-meta{flex-direction:column;gap:14px;}
+    .feature-text h2{font-size:1.8rem;}
+    .quote-band .script{font-size:1.7rem;}
+    .badges{gap:24px;}
+    .badge{width:120px;height:120px;}
+    .gallery-grid{grid-template-columns:1fr;}
+    .gallery-grid img{height:220px;}
+    .menu-item{flex-direction:column;align-items:flex-start;gap:4px;}
+    .steps{gap:30px;}
+  }
+</style>
+</head>
+<body data-lvlup-branding="true">
+<span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;padding:0;margin:-1px;" aria-hidden="true">Website built by LevelUpAI for American Painting — Build LVLUP-dc13497abf9d — levelupaico.com</span>
+
+
+<div class="lvlup-brand-bar">
+  <div class="lvlup-brand-left">
+    <span class="lvlup-brand-dot"></span>
+    <span>American Painting<span class="lvlup-brand-sub">Website design by LevelUpAI</span></span>
+  </div>
+  <a href="https://levelupaico.com/#contact" target="_blank" rel="noopener" class="lvlup-brand-cta">Get This Site</a>
+</div>
+
+<nav class="navbar">
+  <div class="logo-mark"><span class="dot"></span>American Painting</div>
+  <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+  <div class="nav-links">
+    <a href="index.html" class="current">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="about.html#contact" class="nav-cta">Contact</a>
+  </div>
+</nav>
+
+<section class="hero" id="top">
+  <div class="hero-card">
+    <div class="hero-eyebrow">painting companies &middot; Oklahoma City</div>
+    <div class="biz-name">American Painting</div>
+    <div class="hero-ribbon">American Painting — painting companies You Can Trust</div>
+    <p class="hero-sub">Serving Oklahoma City with reliable, professional painting companies. Call today for a free quote.</p>
+    <div class="hero-meta">
+      <div><strong>Call</strong>(405) 875-2475</div>
+      <div><strong>Find Us</strong>5140 SW 156th St, Oklahoma City, OK 73173, USA</div>
+    </div>
+  </div>
+</section>
+<div class="zigzag"></div>
+
+<section class="trust-band" id="about">
+  <h2>Why Oklahoma City Trusts Us</h2>
+  <div class="badges">
+    <div class="badge"><div class="big">100%</div><div class="small">Local & Trusted</div></div>
+    <div class="badge"><div class="big">5★</div><div class="small">Rated Service</div></div>
+    <div class="badge"><div class="big">painting companies</div><div class="small">Specialists</div></div>
+  </div>
+</section>
+
+<section class="feature">
+  <div class="feature-text">
+    <div class="tag">What We Do</div>
+    <h2>American Painting — painting companies You Can Trust</h2>
+    <p>Serving Oklahoma City with reliable, professional painting companies. Call today for a free quote.</p>
+    <a href="about.html#contact" class="btn-outline">Get In Touch</a>
+  </div>
+  <div class="feature-photo"></div>
+</section>
+
+<section class="menu-board">
+  <div class="tag hero-eyebrow">Straight Talk, No Surprises</div>
+  <h2>What Oklahoma City Can Count On</h2>
+  <div class="menu-list">
+    <div class="menu-item">
+      <div>
+        <div class="name">Free Estimates</div>
+        <div class="desc">A clear price before any work begins &mdash; every time.</div>
+      </div>
+      <div class="mark">No Cost</div>
+    </div>
+    <div class="menu-item">
+      <div>
+        <div class="name">painting companies Done Right</div>
+        <div class="desc">Licensed, experienced, and backed by American Painting's name.</div>
+      </div>
+      <div class="mark">Guaranteed</div>
+    </div>
+    <div class="menu-item">
+      <div>
+        <div class="name">Fast Response</div>
+        <div class="desc">We show up when we say we will &mdash; no waiting around.</div>
+      </div>
+      <div class="mark">Same Week</div>
+    </div>
+    <div class="menu-item">
+      <div>
+        <div class="name">Local to Oklahoma City</div>
+        <div class="desc">Real neighbors, real accountability, real results.</div>
+      </div>
+      <div class="mark">Since Day One</div>
+    </div>
+  </div>
+</section>
+
+<section class="quote-band">
+  <div>
+    <p class="script">&ldquo;American Painting is the name every neighbor in Oklahoma City passes along.&rdquo;</p>
+    <div class="attribution">A Happy Oklahoma City Customer</div>
+  </div>
+</section>
+
+<section class="process">
+  <h2>How It Works</h2>
+  <div class="steps">
+    <div class="step">
+      <div class="num">1</div>
+      <h3>Reach Out</h3>
+      <p>Call (405) 875-2475 or send a message &mdash; tell us what you need.</p>
+    </div>
+    <div class="step">
+      <div class="num">2</div>
+      <h3>Get A Quote</h3>
+      <p>We'll walk the job and give you a straight, no-pressure price.</p>
+    </div>
+    <div class="step">
+      <div class="num">3</div>
+      <h3>We Get It Done</h3>
+      <p>American Painting shows up on time and does it right the first time.</p>
+    </div>
+  </div>
+</section>
+
+<section class="gallery-band" id="gallery">
+  <h2>Take A Look</h2>
+</section>
+<div class="gallery-grid">
+  <a href="#"><img src="https://images.unsplash.com/photo-1772384404280-57f4563dc105?ixid=M3wxMDM1NzM1fDB8MXxzZWFyY2h8M3x8cGFpbnRpbmclMjBjb21wYW5pZXMlMjB3b3JrZXIlMjBwcm9mZXNzaW9uYWwlMjBzZXJ2aWNlfGVufDB8Mnx8fDE3OTMyMDgxOTF8MA&ixlib=rb-4.1.0&w=1200&q=80&fit=crop" alt="American Painting photo"></a>
+  <a href="#"><img src="https://images.unsplash.com/photo-1680940429127-a4b0944e8584?ixid=M3wxMDM1NzM1fDB8MXxzZWFyY2h8NHx8cGFpbnRpbmclMjBjb21wYW5pZXMlMjB3b3JrZXIlMjBwcm9mZXNzaW9uYWwlMjBzZXJ2aWNlfGVufDB8Mnx8fDE3OTMyMDgxOTF8MA&ixlib=rb-4.1.0&w=1200&q=80&fit=crop" alt="American Painting photo"></a>
+  <a href="#"><img src="https://images.unsplash.com/photo-1590000011709-0a60809e0069?ixid=M3wxMDM1NzM1fDB8MXxzZWFyY2h8NXx8cGFpbnRpbmclMjBjb21wYW5pZXMlMjB3b3JrZXIlMjBwcm9mZXNzaW9uYWwlMjBzZXJ2aWNlfGVufDB8Mnx8fDE3OTMyMDgxOTF8MA&ixlib=rb-4.1.0&w=1200&q=80&fit=crop" alt="American Painting photo"></a>
+  <a href="#"><img src="https://images.unsplash.com/photo-1647686909783-b9940d9ae0da?ixid=M3wxMDM1NzM1fDB8MXxzZWFyY2h8Nnx8cGFpbnRpbmclMjBjb21wYW5pZXMlMjB3b3JrZXIlMjBwcm9mZXNzaW9uYWwlMjBzZXJ2aWNlfGVufDB8Mnx8fDE3OTMyMDgxOTF8MA&ixlib=rb-4.1.0&w=1200&q=80&fit=crop" alt="American Painting photo"></a>
+</div>
+<div class="zigzag flip"></div>
+
+<section class="contact-band" id="contact">
+  <div class="contact-inner">
+    <h2>Contact &amp; Info</h2>
+    <p class="sub">Reach out to American Painting today</p>
+    <div class="contact-grid">
+      <div><div class="label">Phone</div><div class="value">(405) 875-2475</div></div>
+      <div><div class="label">Address</div><div class="value">5140 SW 156th St, Oklahoma City, OK 73173, USA</div></div>
+      <div><div class="label">City</div><div class="value">Oklahoma City</div></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="about.html#contact">Contact</a>
+  </div>
+  <div>American Painting &middot; Oklahoma City</div>
+  <div class="credit">Photos by <a href="https://unsplash.com/@rolyevm?utm_source=levelupai_site_builder&utm_medium=referral" target="_blank">Rolando Ernesto Villavicencio Matínez</a>, <a href="https://unsplash.com/@mandcpainting?utm_source=levelupai_site_builder&utm_medium=referral" target="_blank">Matt Adams</a>, <a href="https://unsplash.com/@visualsbyamor?utm_source=levelupai_site_builder&utm_medium=referral" target="_blank">Ragét Ri</a>, <a href="https://unsplash.com/@onivalentino?utm_source=levelupai_site_builder&utm_medium=referral" target="_blank">Montironi Valentino</a>, <a href="https://unsplash.com/@jfoto54?utm_source=levelupai_site_builder&utm_medium=referral" target="_blank">James Obernesser</a>, <a href="https://unsplash.com/@derekleej?utm_source=levelupai_site_builder&utm_medium=referral" target="_blank">Derek Lee</a> on <a href="https://unsplash.com/?utm_source=levelupai_site_builder&utm_medium=referral" target="_blank">Unsplash</a></div>
+</footer>
+
+<div class="style-switcher">
+  <div class="panel" id="stylePanel">
+    <div class="panel-label">Color Style</div>
+    <button class="swatch-btn" data-style="americana">
+      <span class="dots"><span style="background:#1B3A6B"></span><span style="background:#D6301F"></span><span style="background:#F2A900"></span></span>
+      Classic Americana
+    </button>
+    <button class="swatch-btn" data-style="coastal">
+      <span class="dots"><span style="background:#0E7C86"></span><span style="background:#F4623A"></span><span style="background:#D4AF37"></span></span>
+      Coastal Diner
+    </button>
+    <button class="swatch-btn" data-style="route66">
+      <span class="dots"><span style="background:#8C3A2B"></span><span style="background:#2FA4A9"></span><span style="background:#C08A34"></span></span>
+      Route 66
+    </button>
+  </div>
+  <button class="toggle-btn" id="styleToggle" aria-label="Change color style">&#127912;</button>
+</div>
+
+<script>
+(function(){
+  var palettes = {
+    americana: { navy:'#1B3A6B', navyDark:'#132a4f', red:'#D6301F', redDark:'#a92418', cream:'#FFF8EE', mustard:'#F2A900' },
+    coastal:   { navy:'#0E7C86', navyDark:'#054A51', red:'#F4623A', redDark:'#D14F2E', cream:'#FFF8F0', mustard:'#D4AF37' },
+    route66:   { navy:'#8C3A2B', navyDark:'#6B2A1F', red:'#2FA4A9', redDark:'#1F7B7F', cream:'#FFF8EE', mustard:'#C08A34' }
+  };
+  var root = document.documentElement;
+  var STORAGE_KEY = 'levelupai-site-style';
+
+  function applyStyle(name){
+    var p = palettes[name];
+    if(!p) return;
+    root.style.setProperty('--navy', p.navy);
+    root.style.setProperty('--navy-dark', p.navyDark);
+    root.style.setProperty('--red', p.red);
+    root.style.setProperty('--red-dark', p.redDark);
+    root.style.setProperty('--cream', p.cream);
+    root.style.setProperty('--mustard', p.mustard);
+    document.querySelectorAll('.style-switcher .swatch-btn').forEach(function(btn){
+      btn.classList.toggle('active', btn.getAttribute('data-style') === name);
+    });
+    try{ localStorage.setItem(STORAGE_KEY, name); }catch(e){}
+  }
+
+  document.getElementById('styleToggle').addEventListener('click', function(){
+    document.getElementById('stylePanel').classList.toggle('open');
+  });
+
+  document.querySelectorAll('.style-switcher .swatch-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      applyStyle(btn.getAttribute('data-style'));
+    });
+  });
+
+  var saved = null;
+  try{ saved = localStorage.getItem(STORAGE_KEY); }catch(e){}
+  applyStyle(saved || 'americana');
+})();
+</script>
+
+<style>
+  .device-toggle{position:fixed;top:16px;right:16px;z-index:150;display:flex;gap:4px;background:#fff;border-radius:100px;padding:4px;box-shadow:0 6px 18px rgba(0,0,0,0.15);}
+  .device-toggle button{width:36px;height:36px;border-radius:50%;border:none;background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#666;transition:background .2s ease,color .2s ease;}
+  .device-toggle button.active{background:#111;color:#fff;}
+  .device-toggle svg{width:18px;height:18px;}
+  @media (max-width:600px){ .device-toggle{display:none;} }
+
+  .phone-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:500;display:none;align-items:center;justify-content:center;padding:30px;}
+  .phone-overlay.open{display:flex;}
+  .phone-frame{width:375px;height:812px;max-height:90vh;background:#111;border-radius:40px;padding:14px;box-shadow:0 30px 80px rgba(0,0,0,0.5);position:relative;}
+  .phone-frame::before{content:'';position:absolute;top:14px;left:50%;transform:translateX(-50%);width:120px;height:24px;background:#111;border-radius:0 0 16px 16px;z-index:2;}
+  .phone-frame iframe{width:100%;height:100%;border:none;border-radius:28px;background:#fff;}
+  .phone-close{position:absolute;top:-44px;right:0;background:rgba(255,255,255,0.15);border:none;color:#fff;width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:1.2rem;line-height:1;}
+</style>
+
+<div class="device-toggle">
+  <button id="laptopBtn" class="active" onclick="setDeviceView('laptop')" aria-label="Desktop view">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="12" rx="1"/><line x1="2" y1="20" x2="22" y2="20"/></svg>
+  </button>
+  <button id="phoneBtn" onclick="setDeviceView('phone')" aria-label="Phone view">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="7" y="2" width="10" height="20" rx="2"/><line x1="11" y1="18" x2="13" y2="18"/></svg>
+  </button>
+</div>
+
+<div class="phone-overlay" id="phoneOverlay">
+  <div class="phone-frame">
+    <button class="phone-close" onclick="setDeviceView('laptop')" aria-label="Close phone view">&times;</button>
+    <iframe id="phoneFrame" src=""></iframe>
+  </div>
+</div>
+
+<script>
+(function(){
+  function setDeviceView(mode){
+    var overlay = document.getElementById('phoneOverlay');
+    var laptopBtn = document.getElementById('laptopBtn');
+    var phoneBtn = document.getElementById('phoneBtn');
+    var frame = document.getElementById('phoneFrame');
+    if(mode === 'phone'){
+      frame.src = window.location.href;
+      overlay.classList.add('open');
+      laptopBtn.classList.remove('active');
+      phoneBtn.classList.add('active');
+    } else {
+      overlay.classList.remove('open');
+      frame.src = '';
+      laptopBtn.classList.add('active');
+      phoneBtn.classList.remove('active');
+    }
+  }
+  window.setDeviceView = setDeviceView;
+})();
+</script>
+
+</body>
+</html>
